@@ -1,31 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-
+// gives access to <SignOutForm/>
+import { SignOutForm } from "../SignOut";
 const Navigation = () => (
     <div className="NavBar" id="nav-container">
         <nav>
             <ul id="nav-list">    
                 <li>
-                    <Link to = { ROUTES.SIGN_IN }>
-                        Sign In
-                    </Link>
+                    <Link to = { ROUTES.SIGN_IN }>Sign In</Link>
                 </li>
                 <li>
-                    <Link to = { ROUTES.SIGN_UP }>
-                        Create Account
-                    </Link>
+                    <Link to = { ROUTES.SIGN_UP }>Create Account</Link>
                 </li>
                 <li>
-                    <Link to = { ROUTES.SIGN_OUT }>
-                        Sign Out
-                    </Link>
+                    <SignOutForm/>
                 </li>
                 
                 <li>
-                    <Link to = { ROUTES.HOME }>
-                        Home
-                    </Link>
+                    <Link to = { ROUTES.HOME }>Home</Link>
                 </li>
                 <li>
                 
@@ -33,20 +26,19 @@ const Navigation = () => (
                 
                 </li>
                 <li>
-                    <Link to = { ROUTES.UPLOAD }>
-                        Upload
-                    </Link>
+                    <Link to = { ROUTES.UPLOAD }>Upload</Link>
                 </li>
                 
                 <li>
-                    <Link to = { ROUTES.ADMIN }>
-                        Admin 
-                    </Link>
+                    <Link to = { ROUTES.ADMIN }>Admin</Link>
                 </li>
                 <li>
-                    <li>
-                        <Link to = { ROUTES.ACCOUNT }>Account</Link>
-                    </li>
+                    <ul>
+                        <li>
+                            <Link to = { ROUTES.ACCOUNT }>Account</Link>
+                        </li>
+                    </ul>
+                    
                     {/* Drop down options */}
                     <ul>
                         <li>

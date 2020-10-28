@@ -4,11 +4,12 @@ import './index.css';
 import './NavBar.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-
+import Firebase, { FirebaseContext } from './components/Firebase';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // ensures that only 1 firebase is instantiated
+  <FirebaseContext.Provider value={new Firebase()}>
+    <App/>
+  </FirebaseContext.Provider>,
   document.getElementById('root')
 );
 
