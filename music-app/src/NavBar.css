@@ -1,0 +1,57 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.NavBar{
+    background-color: pink;
+    display: flex;
+}
+  
+li {
+    display: block;
+    padding: 8px;
+}
+a {
+    display: inline;
+    text-decoration: none;
+    float: right;
+    padding: 8px;
+}
+a:link {
+    color: black;
+  }
+/* visited link */
+a:visited {
+    color: black;
+  }
+a:hover {
+    background-color: red;
+} 
+
+
+ul li {display: inline-block;}
+ul li:hover {background: pink;}
+ul li:hover ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul li a {
+    float: none;
+}
+ul li ul {
+  position: absolute;
+  display: none;
+}
+ul li ul li { 
+  background: pink; 
+  display: block; 
+  padding: 8px;
+}
+
+.searchBar{
+    background-color: white;
+    border: none;
+}
