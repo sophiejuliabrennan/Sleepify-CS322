@@ -1,6 +1,8 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import * as firebase from 'firebase';
+import 'firebase/database';
+
 const config = {
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -20,7 +22,7 @@ class Firebase{
         app.initializeApp(config);
         // firebase authentatication
         this.auth = app.auth();
-        
+        this.db = app.database();
         
         
     }
@@ -91,6 +93,12 @@ class Firebase{
           console.log("User is signed out");
         }
     };
+	
+	// USER API
+	
+	user = uid => this.db.ref(`users/${uid}`);
+	
+	users = () => this.db.ref('users');
 
 }
  
