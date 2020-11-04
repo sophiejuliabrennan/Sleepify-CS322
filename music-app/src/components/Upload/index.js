@@ -13,12 +13,10 @@ class UploaderBase extends Component{
     super(props);
     this.state = {
       file: null,
-      metadata : {
-        artist: "",
-        song_name: "",
-        genre: "",
-        length: 0
-      }
+      artist: null,
+      song_name: null,
+      genre: null,
+      length: 0
     };
   }
 
@@ -39,9 +37,18 @@ class UploaderBase extends Component{
       return;
     }
 
-    console.log(this.state.metadata);
+    var _metadata = {
+      customMetadata: {
+        artist: this.state.artist,
+        song_name: this.state.song_name,
+        genre: this.state.genre,
+      }
+    }
 
-    var uploadTask = this.props.firebase.storageRef.child('audio/' + this.state.file.name).put(this.state.file, this.state.metadata);
+    console.log(_metadata);
+
+    var fileRef = this.props.firebase.storageRef.child('audio/' + this.state.file.name);
+    var uploadTask = fileRef.put(this.state.file);
     console.log(uploadTask);
 
     uploadTask.on('state_changed', function(snapshot){
@@ -56,8 +63,28 @@ class UploaderBase extends Component{
         console.log('File available at', downloadURL);
         document.getElementById("info").innerHTML=downloadURL;
       });
+
+      fileRef.updateMetadata(_metadata).then(function(metadata){
+        console.log(metadata);
+      }).catch(function(err){
+        console.log(err);
+      });
     });
+    
   }
+
+  handleSongChange(event){
+    console.log(event.target.value);
+    this.setState({...this.state, song_name: event.target.value});
+    console.log(this.state);
+  }
+
+  handleGenreChange(event){
+    console.log(event.target.value);
+    this.setState({...this.state, genre: event.target.value});
+    console.log(this.state);
+  }
+
 
   onChangeHandler = event => {
     console.log("File loaded");
@@ -96,9 +123,9 @@ class UploaderBase extends Component{
       <div>
         <input type="file" name="file" onChange={this.onChangeHandler}/>
         <br/>
-        <input type="type" id="song" placeholder="Song Title"/>
+        <input type="type" id="song" placeholder="Song Title" onChange={e => this.handleSongChange(e)}/>
         <br/>
-        <input type="type" id="genre" placeholder="Genre"/>
+        <input type="type" id="genre" placeholder="Genre" onChange={e => this.handleGenreChange(e)}/>
         <br/>
         <button type="button" onClick={this.onClickHandler}>Upload</button>
         <br/>
