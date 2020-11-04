@@ -14,6 +14,7 @@ class UploaderBase extends Component{
     this.state = {
       file: null,
       metadata : {
+        artist: "",
         song_name: "",
         genre: "",
         length: 0
@@ -23,11 +24,6 @@ class UploaderBase extends Component{
 
   onClickHandler = () => {
 
-    // console.log(this.state.file);
-    // console.log(this.props.firebase.storage);
-    // console.log(this.props.firebase.storageRef);
-    // console.log(this.state.file);
-
     // Stop the user from uploading non audio files
     if(!this.state.file.type.match('audio/.*')){
       console.log("Unsupported File Type");
@@ -36,6 +32,15 @@ class UploaderBase extends Component{
     }
 
     console.log("This file = " + this.state.file.name);
+
+    // limit upload files to about 50 mb
+    if(this.state.file.size > 50000000){
+      document.getElementById("info").innerHTML = "You file is too big! Please upload a smaller file";
+      return;
+    }
+
+    console.log(this.state.metadata);
+
     var uploadTask = this.props.firebase.storageRef.child('audio/' + this.state.file.name).put(this.state.file, this.state.metadata);
     console.log(uploadTask);
 
@@ -56,12 +61,31 @@ class UploaderBase extends Component{
 
   onChangeHandler = event => {
     console.log("File loaded");
+
+    var _artist;
+    var _uid = this.props.firebase.auth.currentUser.uid;
+    console.log("This users uid = "  + _uid);
+    var db = this.props.firebase.db;
+    var ref = db.ref("users");
+    console.log(ref);
+    ref.orderByChild("users").on("child_added", function(snapshot) {
+      if(snapshot.key == _uid)
+        console.log(snapshot.key + " is " + snapshot.val().username);
+        _artist = snapshot.val().username;
+    });
+
+
+    // song name or genre not setting, need to fix this
+    var _song_name = document.getElementById("song").value;
+    var _genre = document.getElementById("genre").value;
+
     this.setState({
       file: event.target.files[0],
       loaded: 0,
       metadata : {
-        song_name: document.getElementById("song").value,
-        genre: document.getElementById("genre").value,
+        artist: _artist,
+        song_name: _song_name,
+        genre: _genre,
         length: event.target.files[0].size
       }
     })
