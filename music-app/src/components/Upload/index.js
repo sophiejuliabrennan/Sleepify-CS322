@@ -22,6 +22,19 @@ class UploaderBase extends Component{
 
   onClickHandler = () => {
 
+    var _artist;
+    var _uid = this.props.firebase.auth.currentUser.uid;
+    console.log("This users uid = "  + _uid);
+    var db = this.props.firebase.db;
+    var ref = db.ref("users");
+    console.log(ref);
+    ref.orderByChild("users").on("child_added", function(snapshot) {
+      if(snapshot.key == _uid){
+        _artist = snapshot.val().username;
+        console.log(snapshot.key + " is " + snapshot.val().username);
+      }
+    });
+
     // Stop the user from uploading non audio files
     if(!this.state.file.type.match('audio/.*')){
       console.log("Unsupported File Type");
@@ -37,9 +50,11 @@ class UploaderBase extends Component{
       return;
     }
 
+    console.log(this.state.artist + " artist");
+
     var _metadata = {
       customMetadata: {
-        artist: this.state.artist,
+        artist: _artist,
         song_name: this.state.song_name,
         genre: this.state.genre,
       }
@@ -64,6 +79,8 @@ class UploaderBase extends Component{
         document.getElementById("info").innerHTML=downloadURL;
       });
 
+
+      // Set the metadata
       fileRef.updateMetadata(_metadata).then(function(metadata){
         console.log(metadata);
       }).catch(function(err){
@@ -87,32 +104,18 @@ class UploaderBase extends Component{
 
 
   onChangeHandler = event => {
-    console.log("File loaded");
+    // console.log("File loaded");
 
-    var _artist;
-    var _uid = this.props.firebase.auth.currentUser.uid;
-    console.log("This users uid = "  + _uid);
-    var db = this.props.firebase.db;
-    var ref = db.ref("users");
-    console.log(ref);
-    ref.orderByChild("users").on("child_added", function(snapshot) {
-      if(snapshot.key == _uid)
-        console.log(snapshot.key + " is " + snapshot.val().username);
-        _artist = snapshot.val().username;
-    });
-
-
-    // song name or genre not setting, need to fix this
-    var _song_name = document.getElementById("song").value;
-    var _genre = document.getElementById("genre").value;
+    // // song name or genre not setting, need to fix this
+    // var _song_name = document.getElementById("song").value;
+    // var _genre = document.getElementById("genre").value;
 
     this.setState({
       file: event.target.files[0],
-      loaded: 0,
       metadata : {
-        artist: _artist,
-        song_name: _song_name,
-        genre: _genre,
+        artist: "_artist",
+        song_name: "_song_name",
+        genre: "_genre",
         length: event.target.files[0].size
       }
     })
