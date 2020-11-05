@@ -3,7 +3,17 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 // gives access to <SignOutForm/>
 import { SignOutForm } from "../SignOut";
-const Navigation = () => (
+import { AuthUserContext } from '../Session';
+
+const Navigation = ()=> (
+<div><AuthUserContext.Consumer>
+{authUser =>
+    authUser ? <NavigationAuth /> : <NavigationNonAuth/>}
+</AuthUserContext.Consumer>
+    </div>
+);
+
+const NavigationAuth = () => (
     <div className="NavBar" id="nav-container">
         <nav>
             <ul id="nav-list">    
@@ -59,6 +69,17 @@ const Navigation = () => (
             </ul>
         </nav>
     </div>
+);
+
+const NavigationNonAuth = () => (
+    <ul>
+                <li>
+                    <Link to = { ROUTES.SIGN_IN }>Sign In</Link>
+                </li>
+                <li>
+                    <Link to = { ROUTES.SIGN_UP }>Create Account</Link>
+                </li>
+    </ul>
 );
  
 export default Navigation;
