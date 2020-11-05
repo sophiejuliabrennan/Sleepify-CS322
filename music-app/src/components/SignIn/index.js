@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import { withAuthorization } from '../Session';
  
 const SignIn = () => (
   <div>
@@ -79,6 +80,8 @@ class SignInFormBase extends Component {
 }
  
 const SignInForm = withRouter(withFirebase(SignInFormBase));
+
+const condition = authUser => authUser;
 export default SignIn;
  
 export { SignInForm };
