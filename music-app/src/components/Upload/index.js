@@ -63,6 +63,8 @@ class UploaderBase extends Component{
     console.log(_metadata);
 
     var fileRef = this.props.firebase.storageRef.child('audio/' + this.state.file.name);
+    var dbRef = this.props.firebase.db.ref().child("audioReferences/");
+
     var uploadTask = fileRef.put(this.state.file);
     console.log(uploadTask);
 
@@ -77,8 +79,14 @@ class UploaderBase extends Component{
       uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
         console.log('File available at', downloadURL);
         document.getElementById("info").innerHTML=downloadURL;
-      });
 
+        // send reference to relational db
+        dbRef.push({
+          link : downloadURL,
+          metadata : _metadata
+        });
+
+      });
 
       // Set the metadata
       fileRef.updateMetadata(_metadata).then(function(metadata){
@@ -86,8 +94,9 @@ class UploaderBase extends Component{
       }).catch(function(err){
         console.log(err);
       });
+
     });
-    
+
   }
 
   handleSongChange(event){
@@ -104,12 +113,6 @@ class UploaderBase extends Component{
 
 
   onChangeHandler = event => {
-    // console.log("File loaded");
-
-    // // song name or genre not setting, need to fix this
-    // var _song_name = document.getElementById("song").value;
-    // var _genre = document.getElementById("genre").value;
-
     this.setState({
       file: event.target.files[0],
       metadata : {
