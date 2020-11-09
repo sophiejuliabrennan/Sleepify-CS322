@@ -18,3 +18,22 @@ html{
 h1{
   color: white;
 }
+
+div1 /*Landing Page*/
+{
+    text-align: center;
+}
+
+div2 /*Landing Page*/
+{
+    text-align: left;
+    color: aqua;
+}
+
+.one /*Landing Page*/
+{
+  font-size: 30px;
+  margin: 4px 20px;
+  position: absolute;
+}
+
