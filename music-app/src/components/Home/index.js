@@ -1,5 +1,6 @@
 import React from 'react';
 import firebase from "firebase";
+import { withAuthorization } from '../Session';
 
 
 function check(){
@@ -23,5 +24,7 @@ const Home = () => (
     
   </div>
 );
+
+const condition = authUser => !!authUser;
  
-export default Home;
+export default withAuthorization(condition)(Home);
