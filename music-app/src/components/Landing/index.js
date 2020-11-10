@@ -35,13 +35,9 @@ const Landing = () => (
     <h3>You can use your Google account when signing up for faster access.</h3>
     <h3>You can browse the music by songs, artists or genre.</h3>
     <h3>You can do all of that in seconds and its free of charge.</h3>
-
+    
   </div1>
 
 );
 
-
-
-
- 
 export default Landing;

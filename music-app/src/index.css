@@ -19,7 +19,7 @@ h1{
   color: white;
 }
 
-div1 /*Landing Page*/
+div1
 {
     text-align: center;
 }
@@ -36,4 +36,5 @@ div2 /*Landing Page*/
   margin: 4px 20px;
   position: absolute;
 }
+
 
