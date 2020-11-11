@@ -23,8 +23,8 @@ class Firebase{
         // firebase authentatication
         this.auth = app.auth();
         this.db = app.database();
-        
-        
+        this.storage = app.storage(); // the storage
+        this.storageRef = app.storage().ref(); // reference to storage location
     }
 
     
@@ -98,7 +98,7 @@ class Firebase{
 	
 	user = uid => this.db.ref(`users/${uid}`);
 	
-	users = () => this.db.ref('users');
+    users = () => this.db.ref('users');
 
 }
  
