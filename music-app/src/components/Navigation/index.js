@@ -33,13 +33,10 @@ const NavigationAuth = () => (
                 <li>
                     <Link to = { ROUTES.ADMIN }>Admin</Link>
                 </li>
-                <li>
-                    <ul>
+                <li>  
                         <li>
                             <Link to = { ROUTES.ACCOUNT }>Account</Link>
                         </li>
-                    </ul>
-                    
                     {/* Drop down options */}
                     <ul>
                         <li>
