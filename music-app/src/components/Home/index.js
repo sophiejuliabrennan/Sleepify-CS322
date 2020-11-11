@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import firebase from "firebase";
 import { withAuthorization } from '../Session';
 import { withFirebase } from '../Firebase';
 import "./card.css";
@@ -35,7 +34,11 @@ class GetMusicBase extends Component{
       var genre = snapshot.val().metadata.customMetadata.genre;
       // get the song name
       var song = snapshot.val().metadata.customMetadata.song_name;
+      // if the name of the song is too long, make is shorter
+      if(song.length > 15)
+        song = song.substring(0,13) + "...";
 
+      // debugging logs remove when this is completed
       console.log("Link: " + link);
       console.log("Artist: " + artist);
       console.log("Genre: " + genre);
@@ -58,12 +61,23 @@ class GetMusicBase extends Component{
   }
 }
 
+// TODO remove this sample audio output, instead source to actual audio player
+// THIS IS FOR TESTING PURPOSES ONLY
+function PlayThisLink(link){
+  var audio = document.createElement("audio");
+  audio.src = link;
+  audio.play();
+  document.getElementById("music").appendChild(audio);
+}
 
 function CreateCard(link, artist, genre, song){
   var card = document.createElement("div");
   card.id = "card";
 
-  card.onclick = function(){console.log("im about to play " + link)};
+  card.onclick = function(){
+    console.log("im about to play " + link);
+    PlayThisLink(link);
+  };
 
   var _artist = document.createElement("div");
   var artist_text = document.createElement("H2");
