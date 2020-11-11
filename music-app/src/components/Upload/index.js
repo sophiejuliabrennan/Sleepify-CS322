@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withFirebase } from '../Firebase';
+import { withAuthorization } from '../Session';
 
 const Upload = () => (
   <div>
