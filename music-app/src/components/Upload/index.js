@@ -30,7 +30,7 @@ class UploaderBase extends Component{
     var ref = db.ref("users");
     console.log(ref);
     ref.orderByChild("users").on("child_added", function(snapshot) {
-      if(snapshot.key == _uid){
+      if(snapshot.key === _uid){
         _artist = snapshot.val().username;
         console.log(snapshot.key + " is " + snapshot.val().username);
       }
@@ -144,5 +144,7 @@ class UploaderBase extends Component{
 }
 
 const Uploader = withFirebase(UploaderBase);
- 
-export default Upload;
+
+
+const condition = authUser => !!authUser; 
+export default withAuthorization(condition)(Upload);
