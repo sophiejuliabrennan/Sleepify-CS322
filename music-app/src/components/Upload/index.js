@@ -1,4 +1,5 @@
 import React from 'react';
+import { withAuthorization } from '../Session';
  
 const Upload = () => (
   <div>
@@ -6,4 +7,5 @@ const Upload = () => (
   </div>
 );
  
-export default Upload;
+const condition = authUser => !!authUser;
+export default withAuthorization(condition)(Upload);

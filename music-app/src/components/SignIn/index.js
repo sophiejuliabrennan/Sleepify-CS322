@@ -81,7 +81,7 @@ class SignInFormBase extends Component {
  
 const SignInForm = withRouter(withFirebase(SignInFormBase));
 
-const condition = authUser => authUser;
+
 export default SignIn;
  
 export { SignInForm };
