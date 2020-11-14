@@ -67,7 +67,7 @@ function PlayThisLink(link){
   var audio = document.createElement("audio");
   audio.src = link;
   audio.play();
-  document.getElementById("music").appendChild(audio);
+  //document.getElementById("music").appendChild(audio);
 }
 
 function CreateCard(link, artist, genre, song){
@@ -100,7 +100,16 @@ function CreateCard(link, artist, genre, song){
   _genre.appendChild(genre_text);
   card.appendChild(_genre);
 
-  document.getElementById("music").appendChild(card);
+  // will only do this if the Home page is loaded
+  // otherwise it will throw an error 
+  try{
+    document.getElementById("music").appendChild(card);
+  }
+  catch(err){
+    console.log("cannot do this here");
+    console.log(err);
+  }
+  
 }
 
 const GetMusic = withFirebase(GetMusicBase);
