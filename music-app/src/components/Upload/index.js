@@ -36,6 +36,9 @@ class UploaderBase extends Component{
       }
     });
 
+    if(_artist == null)
+      _artist = "unknown";
+
     // Stop the user from uploading non audio files
     if(!this.state.file.type.match('audio/.*')){
       console.log("Unsupported File Type");
