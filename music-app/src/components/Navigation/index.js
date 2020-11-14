@@ -17,15 +17,6 @@ const NavigationAuth = () => (
     <div className="NavBar" id="nav-container">
         <nav>
             <ul id="nav-list">    
-                <li>
-                    <Link to = { ROUTES.SIGN_IN }>Sign In</Link>
-                </li>
-                <li>
-                    <Link to = { ROUTES.SIGN_UP }>Create Account</Link>
-                </li>
-                <li>
-                    <SignOutForm/>
-                </li>
                 
                 <li>
                     <Link to = { ROUTES.HOME }>Home</Link>
@@ -42,13 +33,10 @@ const NavigationAuth = () => (
                 <li>
                     <Link to = { ROUTES.ADMIN }>Admin</Link>
                 </li>
-                <li>
-                    <ul>
+                <li>  
                         <li>
                             <Link to = { ROUTES.ACCOUNT }>Account</Link>
                         </li>
-                    </ul>
-                    
                     {/* Drop down options */}
                     <ul>
                         <li>
@@ -65,6 +53,10 @@ const NavigationAuth = () => (
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <SignOutForm/>
+                </li>
+                
 
             </ul>
         </nav>
