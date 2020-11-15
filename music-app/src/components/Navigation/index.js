@@ -4,6 +4,7 @@ import * as ROUTES from '../../constants/routes';
 // gives access to <SignOutForm/>
 import { SignOutForm } from "../SignOut";
 import { AuthUserContext } from '../Session';
+// import { AudioPlayer } from '../AudioPlayer';
 
 const Navigation = ()=> (
 <div><AuthUserContext.Consumer>
@@ -23,7 +24,7 @@ const NavigationAuth = () => (
                 </li>
                 <li>
                 
-                    <input className={"searchBar"}type="text" placeholder="Search Music" name="search"/>
+                    <input className={"searchBar"} type="text" placeholder="Search Music" name="search"/>
                 
                 </li>
                 <li>
@@ -56,8 +57,10 @@ const NavigationAuth = () => (
                 <li>
                     <SignOutForm/>
                 </li>
-                
-
+                <li>
+                    {/* <AudioPlayer/> */}
+                    <audio id="globalAudioPlayer" controls/>
+                </li>
             </ul>
         </nav>
     </div>
