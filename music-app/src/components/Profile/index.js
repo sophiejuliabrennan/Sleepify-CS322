@@ -35,7 +35,7 @@ class Profile extends Component
         &nbsp;
         <Age users= {users}/>
         &nbsp;
-        <PICTURE users= {users}/>
+        <Picture users= {users}/>
         
       </div1>
     );
@@ -90,17 +90,39 @@ const CurrentName = () => (
   </div>
 );
 
+function age()
+{
+  document.getElementById("age").innerHTML = "You are : " + prompt("Enter your age please:");
+}
+
 const Age = () => (
-  <div>
-    <button>USER AGE</button>
+  <div onLoad={age}>
+    <button id="age" onClick={age}>USER AGE</button>
   </div>
 );
 
-const PICTURE = () => (
+function picture()
+{
+   window.addEventListener('load', function() 
+  {
+    document.querySelector('input[type="file"]').addEventListener('change', function() 
+    {
+       // if (this.files && this.files[0]) 
+        {
+            var img = document.querySelector('img');
+           // img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+           // img.onload = alert(this.src);
+        }
+    });
+  });
+}
+
+const Picture = () => (
   <div>
-    <button>PROFILE PICTURE</button>
+    <button id="picture" onClick={picture}>UPLOAD PROFILE PICTURE</button>
   </div>
 );
+
  
 const condition = authUser => !!authUser;
 export default withAuthorization(condition)(withFirebase(Profile));
