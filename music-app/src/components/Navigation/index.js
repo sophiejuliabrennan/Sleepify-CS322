@@ -5,6 +5,7 @@ import * as ROUTES from '../../constants/routes';
 import { SignOutForm } from "../SignOut";
 import { AuthUserContext } from '../Session';
 // import { AudioPlayer } from '../AudioPlayer';
+import { SearchBarForm } from '../SearchBar';
 
 const Navigation = ()=> (
 <div><AuthUserContext.Consumer>
@@ -23,9 +24,7 @@ const NavigationAuth = () => (
                     <Link to = { ROUTES.HOME }>Home</Link>
                 </li>
                 <li>
-                
-                    <input className={"searchBar"} type="text" placeholder="Search Music" name="search"/>
-                
+                    <SearchBarForm />
                 </li>
                 <li>
                     <Link to = { ROUTES.UPLOAD }>Upload</Link>
