@@ -61,14 +61,11 @@ class GetMusicBase extends Component{
   }
 }
 
-// TODO remove this sample audio output, instead source to actual audio player
-// THIS IS FOR TESTING PURPOSES ONLY
 function PlayThisLink(link){
   var audio = document.getElementById("globalAudioPlayer");
   console.log(audio);
   audio.src = link;
   audio.play();
-  //document.getElementById("music").appendChild(audio);
 }
 
 function CreateCard(link, artist, genre, song){
