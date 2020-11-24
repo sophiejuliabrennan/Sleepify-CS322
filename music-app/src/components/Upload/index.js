@@ -3,10 +3,11 @@ import { withFirebase } from '../Firebase';
 import { withAuthorization } from '../Session';
 
 const Upload = () => (
-  <div>
-    <h1>Upload</h1>
+  <div class="upl">
+    <div>
+    <h1>Upload♪♫♬</h1>
     <Uploader />
-  </div>
+  </div></div>
 );
 
 class UploaderBase extends Component{

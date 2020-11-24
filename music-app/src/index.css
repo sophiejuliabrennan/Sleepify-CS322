@@ -13,10 +13,15 @@ code {
 }
 
 html{
-  background-color: rgb(54, 54, 54);
+  background-image: url("224700.jpg");
 }
 h1{
   color: white;
+  /*font-family: "Times New Roman", Times, serif;*/
+  /*font-family: "Lucida Console", Courier, monospace;*/
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  /*font-family: Impact, Charcoal, sans-serif;*/
+  font-family: 'Courier New', Courier, monospace, monospace;
 }
 
 div1
@@ -37,4 +42,82 @@ div2 /*Landing Page*/
   position: absolute;
 }
 
+/*upload page styling*/
+.upl {
+  text-align: left;
+  /*background-color: indianred;*/
+  background-image: url("wave.gif");
+ 
+  margin-left: 35%;
+  margin-right: 35%;
+  padding-left: 110px;
+  border: 1px solid white;
+  margin-top: 7%;
+}
 
+.home {
+  text-align: center;
+}
+
+/*Admin page styling*/
+.admin {
+  text-align: center;
+  size: 60%;
+  margin-right: 25%;
+  padding-left: 270px;
+  
+}
+
+/*sign in page styling*/
+.sign {
+  margin-top: 7%;
+  text-align: center;
+  border: 1px solid white;
+  margin-left: 37%;
+  margin-right: 35%;
+  
+  background-image: url("wave.gif");
+  
+}
+
+/*button and text centering*/
+#center {
+  text-align: center;
+}
+.one{
+  text-align: center;
+  margin-left: 46%;
+  
+}
+
+/*Adjusting Header fontsize in sign in page*/
+#hed {
+ font-size: 300%;
+}
+
+/*centering wrapped content*/
+.wrap {
+  text-align: center;
+
+}
+/*
+centering heading and moving down page
+create acc page
+*/
+.wrop2 {
+  text-align: center;
+  margin-top: 7%;
+ 
+  }
+
+  /*adjusting font size for create acc*/
+  .siz {
+font-size: 130%;
+  }
+/*google sign in*/
+  .regi{
+    color: cyan;
+    
+  }
+  
+  

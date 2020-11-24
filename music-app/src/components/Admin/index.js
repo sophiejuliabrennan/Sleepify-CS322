@@ -38,13 +38,14 @@ class Admin extends Component {
     const { users,loading } = this.state;
 
     return (
+      <div class = "admin">
       <div>
         <h1>Admin</h1>
 
         {loading && <div> Loading ... </div>}
 
         <UserList users= {users}/>
-      </div>
+      </div></div>
     );
   }
 }
@@ -62,6 +63,7 @@ const UserList = ({ users }) => (
         <span>
           <strong>Username:</strong> {user.username}
         </span>
+        <br></br>
       </li>
     ))}
   </ul>

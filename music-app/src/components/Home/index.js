@@ -4,10 +4,11 @@ import { withFirebase } from '../Firebase';
 import "./card.css";
 
 const Discover = () => (
-  <div>
-    <h1>Discover Music</h1>
+  <div class = "home">
+    <div>
+    <h1>Discover MusiQ♪♫♬</h1>
     <GetMusic />
-  </div>
+  </div></div>
 );
 
 class GetMusicBase extends Component{
@@ -53,7 +54,7 @@ class GetMusicBase extends Component{
   render(){
     return(
       <div>
-          <button onClick={this.onClickHandler}>click</button>
+          <button onClick={this.onClickHandler}>click me ↓</button>
           <ul id="music">
           </ul>
       </div>

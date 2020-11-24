@@ -5,9 +5,11 @@ import * as ROUTES from '../../constants/routes';
  
 const Landing = () => (
   <div1>
-    <h1>Landing</h1>
+    <div>
+    <h1>MusiQ</h1>
+    </div>
 
-    <div2>
+    <div2 id = "center">
     <h3>Sign In before listening to music:</h3>
     </div2>
 
@@ -17,11 +19,12 @@ const Landing = () => (
     <br></br>
     <br></br>
 
-    <div2>
+    <div2 id = "center">
     <h3>If you have not created account yet, please Sign Up first:</h3>
     </div2>
 
     <Link className="one" to = { ROUTES.SIGN_UP }>Sign Up</Link>
+    
 
     <br></br>
     <br></br>

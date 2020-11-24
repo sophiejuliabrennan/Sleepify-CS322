@@ -5,8 +5,11 @@ import { FirebaseContext } from '../Firebase';
 import { withFirebase } from '../Firebase';
 
 const SignUp = () => (
-  <div>
+  <div class = "wrop2">
+    <div class = "siz">
     <h1>Sign Up</h1>
+    </div>
+    
     {/* <FirebaseContext.Consumer>
       {firebase => <SignUpForm firebase={firebase}/>}
     </FirebaseContext.Consumer> */}
@@ -89,6 +92,7 @@ class SignUpFormBase extends Component{
 
     const isInvalid = passwordOne !== passwordTwo || passwordOne === '' || email === '' || username === '';
     return(
+      <div class = "wrap">
       <div>
         <form onSubmit={this.onSubmit}>
           <input
@@ -128,8 +132,10 @@ class SignUpFormBase extends Component{
           {error && <p>{error.message}</p>}
           
         </form>
-        <h1>Register With Google</h1>
+        
+        <span class = "regi">Register With Google</span>
          <button onClick={this.google, this.googleAuth}>Google</button>
+      </div>
       </div>
     );
   }

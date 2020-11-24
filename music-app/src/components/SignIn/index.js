@@ -6,11 +6,13 @@ import * as ROUTES from '../../constants/routes';
 import { withAuthorization } from '../Session';
  
 const SignIn = () => (
+  <div class = "sign">
   <div>
-    <h1>SignIn</h1>
+
+    <h1 id = "hed">MusiQ</h1>
     <SignInForm />
     <SignUpLink />
-  </div>
+  </div></div>
 );
 
 const INITIAL_STATE = {
@@ -69,7 +71,8 @@ class SignInFormBase extends Component {
           placeholder="Password"
           required
         />
-        <button disabled={isInvalid} type="submit">
+        
+        <button id = "btn" disabled={isInvalid} type="submit">
           Sign In
         </button>
  
