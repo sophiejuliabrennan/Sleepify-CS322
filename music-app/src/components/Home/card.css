@@ -1,0 +1,26 @@
+/* music card */
+#card{
+  background-color: grey;
+  width: 250px;
+  height: 200px;
+  text-align: left;
+  display: inline-block;
+  padding: 1%;
+  margin: 1%;
+  color: white;
+}
+/* artist text */
+#artistID{
+    color: white;
+    text-align: left;
+}
+/* song text */
+#songID{
+    color:white;
+    text-align: center;
+}
+/* genre text */
+#genreID{
+    color: white;
+    text-align: right;
+}
