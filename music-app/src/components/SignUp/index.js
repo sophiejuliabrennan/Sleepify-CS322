@@ -7,7 +7,7 @@ import { withFirebase } from '../Firebase';
 const SignUp = () => (
   <div class = "wrop2">
     <div class = "siz">
-    <h1>Sign Up</h1>
+    <h1>SignUp✎</h1>
     </div>
     
     {/* <FirebaseContext.Consumer>
@@ -19,7 +19,9 @@ const SignUp = () => (
 
 const SignUpLink = () => (
   <div>
-    <h1>Don't have an account? </h1>
+    <div class  = "donthavacc">
+    <p>Don't have an account? </p>
+    </div>
     <Link className="forceLeft"to={ROUTES.SIGN_UP}>Sign Up Now</Link>
   </div>
   
@@ -133,7 +135,7 @@ class SignUpFormBase extends Component{
           
         </form>
         
-        <span class = "regi">Register With Google</span>
+        <span class="regi">Register With Google</span>
          <button onClick={this.google, this.googleAuth}>Google</button>
       </div>
       </div>

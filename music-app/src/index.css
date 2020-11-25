@@ -107,7 +107,10 @@ create acc page
 .wrop2 {
   text-align: center;
   margin-top: 7%;
- 
+  border: 1px solid white;
+  margin-left: 35%;
+  margin-right: 35%;
+  background-image: url("wave.gif");
   }
 
   /*adjusting font size for create acc*/
@@ -116,8 +119,11 @@ font-size: 130%;
   }
 /*google sign in*/
   .regi{
-    color: cyan;
+    color: white;
     
   }
   
+  .donthavacc {
+    color: lightblue;
+  }
   
