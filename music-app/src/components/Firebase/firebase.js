@@ -1,6 +1,5 @@
 import app from 'firebase/app';
 import 'firebase/auth';
-import * as firebase from 'firebase';
 import 'firebase/database';
 
 const config = {
@@ -27,36 +26,6 @@ class Firebase{
         this.storageRef = app.storage().ref(); // reference to storage location
     }
 
-    
-
-    googleAuth = e =>{
-        console.log("google auth");
-        //var provider = new firebasex.auth().GoogleAuthProvider();
-        console.log(this.auth);
-        // this.auth().useDeviceLanguage();
-        //   provider.setCustomParameters({
-        //   'login_hint': 'user@example.com'
-        // });
-        // this.auth().signInWithPopup(provider).then(function(result) {
-        //   // This gives you a Google Access Token. You can use it to access the Google API.
-        //   console.log(result.user.photoURL);
-        //   var token = result.credential.accessToken;
-        //   // The signed-in user info.
-        //   var user = result.user;
-        //   // ...
-        // }).catch(function(error) {
-        //   // Handle Errors here.
-        //   var errorCode = error.code;
-        //   var errorMessage = error.message;
-        //   // The email of the user's account used.
-        //   var email = error.email;
-        //   // The firebase.auth.AuthCredential type that was used.
-        //   var credential = error.credential;
-        //   // ...
-        // });
-      }
-    
-
     doCreateUserWithEmailAndPassword = (email, password) =>
     this.auth.createUserWithEmailAndPassword(email, password);
 
@@ -69,17 +38,6 @@ class Firebase{
 
     doPasswordUpdate = password =>
     this.auth.currentUser.updatePassword(password);
-
-
-    // doGoogleAuth = e => {
-    //     var provider = new firebase.auth().GoogleAuthProvider();
-    //     this.auth.signInWithPopup(provider).then(function(){
-    //         console.log("signed in with google");
-    //     }).catch(function(err) {
-    //         console.log(err);
-    //     });
-    // }
-
 
     onAuthStateChanged = (user) => {
         console.log("auth changed");

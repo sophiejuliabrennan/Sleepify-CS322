@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter  } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import { FirebaseContext } from '../Firebase';
 import { withFirebase } from '../Firebase';
 
 const SignUp = () => (
@@ -9,10 +8,6 @@ const SignUp = () => (
     <div class = "siz">
     <h1>SignUp✎</h1>
     </div>
-    
-    {/* <FirebaseContext.Consumer>
-      {firebase => <SignUpForm firebase={firebase}/>}
-    </FirebaseContext.Consumer> */}
     <SignUpForm />
   </div>
 );
@@ -40,21 +35,7 @@ class SignUpFormBase extends Component{
     super(props);
     this.state = { INITIAL_STATE };
   }
-
-  google = e => {
-    console.log("google innit");
-    console.log(e);
-    
-  }
-
-  googleAuth = () =>{
-    this.props.firebase.doGoogleAuth();
-    //console.log(this.props.firebase.googleAuth());
-    //console.log(this.props.firebase.onAuthStateChanged());
-  }
-
-
-
+  
   onSubmit = e => {
     const { username, email, passwordOne } = this.state;
     console.log(e);
@@ -134,9 +115,6 @@ class SignUpFormBase extends Component{
           {error && <p>{error.message}</p>}
           
         </form>
-        
-        <span class="regi">Register With Google</span>
-         <button onClick={this.google, this.googleAuth}>Google</button>
       </div>
       </div>
     );
@@ -145,17 +123,3 @@ class SignUpFormBase extends Component{
 const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 export default SignUp;
 export { SignUpForm, SignUpLink };
-
-// import React from 'react';
- 
-// import  { FirebaseContext } from '../Firebase';
- 
-// const SomeComponent = () => (
-//   <FirebaseContext.Consumer>
-//     {firebase => {
-//       return <div>I've access to Firebase and render something.</div>;
-//     }}
-//   </FirebaseContext.Consumer>
-// );
- 
-// export default SomeComponent;

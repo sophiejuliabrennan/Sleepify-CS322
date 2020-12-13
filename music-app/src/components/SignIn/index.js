@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import { withAuthorization } from '../Session';
  
 const SignIn = () => (
   <div class = "sign">
@@ -76,7 +75,7 @@ class SignInFormBase extends Component {
           Sign In
         </button>
  
-        {error && <p>{error.message}</p>}
+        {error && <span><br></br>{error.message}</span>}
       </form>
     );
   }

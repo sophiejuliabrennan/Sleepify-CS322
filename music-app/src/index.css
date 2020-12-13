@@ -23,7 +23,26 @@ h1{
   /*font-family: Impact, Charcoal, sans-serif;*/
   font-family: 'Courier New', Courier, monospace, monospace;
 }
+span{
+  color: white;
+  /*font-family: "Times New Roman", Times, serif;*/
+  /*font-family: "Lucida Console", Courier, monospace;*/
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  /*font-family: Impact, Charcoal, sans-serif;*/
+  font-family: 'Courier New', Courier, monospace, monospace;
+  font-size: 20px;
+}
+input{
 
+    color: white;
+    /*font-family: "Times New Roman", Times, serif;*/
+    /*font-family: "Lucida Console", Courier, monospace;*/
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    /*font-family: Impact, Charcoal, sans-serif;*/
+    font-family: 'Courier New', Courier, monospace, monospace;
+    background-color: darkgrey;
+    
+}
 div1
 {
     text-align: center;

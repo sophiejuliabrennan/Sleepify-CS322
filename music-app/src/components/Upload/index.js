@@ -51,7 +51,7 @@ class UploaderBase extends Component{
   onClickHandler = () => {
 
     this.findArtistName().then( artistRes => {
-      if(artistRes == "unknown" || artistRes == null)
+      if(artistRes === "unknown" || artistRes === null)
         return;
 
       // Stop the user from uploading non audio files
@@ -64,7 +64,7 @@ class UploaderBase extends Component{
       console.log("This file = " + this.state.file.name);
       // limit upload files to about 50 mb
       if(this.state.file.size > 50000000){
-        document.getElementById("info").innerHTML = "You file is too big! Please upload a smaller file";
+        document.getElementById("info").innerHTML = "Your file is too big! Please upload a smaller file";
         return;
       }
 
@@ -95,7 +95,6 @@ class UploaderBase extends Component{
       }, function() {
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
           console.log('File available at', downloadURL);
-          document.getElementById("info").innerHTML=downloadURL;
           // send reference to relational db
           dbRef.push({
             link : downloadURL,
@@ -149,7 +148,8 @@ class UploaderBase extends Component{
         <button type="button" onClick={this.onClickHandler}>Upload</button>
         <br/>
         <progress id="progress" value="0" max="100"></progress>
-        <h1 id="info"></h1>
+        <br></br>
+        <span  id="info"></span>
       </div>
     );
   }

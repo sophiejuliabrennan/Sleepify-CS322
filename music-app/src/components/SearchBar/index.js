@@ -56,14 +56,14 @@ const SearchBar = () => (
   }
 
   class SearchBarFormBase extends Component{
-    constructor(props){
+    /*constructor(props){
       super(props);
-    }
+    }*/
   
     fuzzy = (e) => {
       console.log(">>>>>>" + e.target.value + " " + e.target.value.length);
       document.getElementById("drop-down").innerHTML="";
-      if(e.target.value.length!=0){
+      if(e.target.value.length!==0){
         var databaseReference = this.props.firebase.db;
         var childReference = databaseReference.ref("audioReferences");
         var search = (e.target.value).toUpperCase();
@@ -97,13 +97,11 @@ const SearchBar = () => (
     render(){
       return(
         <div>
-          <input className={"searchBar", "dropbtn"} type="text" placeholder="Search Music" name="search" onChange={this.fuzzy}/>
+          <input className={"searchBar, dropbtn"} type="text" placeholder="Search Music" name="search" onChange={this.fuzzy}/>
           <div id="searchContainer">
           <div id={"drop-down"} className={"dropdown-content"}>
           </div>   
           </div>
-          
-          
         </div>
       );
     }

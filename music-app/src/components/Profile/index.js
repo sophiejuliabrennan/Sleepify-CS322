@@ -107,12 +107,12 @@ function picture()
   {
     document.querySelector('input[type="file"]').addEventListener('change', function() 
     {
-       // if (this.files && this.files[0]) 
+       /* if (this.files && this.files[0]) 
         {
-            var img = document.querySelector('img');
-           // img.src = URL.createObjectURL(this.files[0]); // set src to blob url
-           // img.onload = alert(this.src);
-        }
+          var img = document.querySelector('img');
+            img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+           img.onload = alert(this.src);
+        }*/
     });
   });
 }
