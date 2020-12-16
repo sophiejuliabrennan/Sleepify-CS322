@@ -18,6 +18,8 @@ const PasswordChange = () => (
   </div1>
 
 <div onLoad={PCC}>
+<input id="newPass" type="password" placeholder="Enter a new password"></input>
+<br/>
 <button id="PCC" onClick={PCC}>Change password</button>
 </div>
   </div1>
@@ -44,15 +46,18 @@ function PCC()
 {
   var user = firebase.auth().currentUser;
 
-  var input = prompt("Enter new password:")
+  //var input = prompt("Enter new password:")
+  var input = document.getElementById("newPass").value;
+  //console.log(input);
+
 
   user.updatePassword(input).then(function() {
-    //console.writeline("Update succesfully");
+    console.log("Update succesfully");
   }).catch(function(error) {
-    //console.writeline("An error happened");
+    console.log("An error happened");
   });
 
-  document.getElementById("PCC").innerHTML = "New Password is: " + input;
+  document.getElementById("PCC").innerHTML = "Password Successfully Changed";
 }
 
 
