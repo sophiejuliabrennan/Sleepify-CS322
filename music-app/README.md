@@ -3,7 +3,7 @@
 ### Link to MusiQ hosted on Google Could
 http://35.214.114.248:3000/
 
-#Example Login Details
+###Example Login Details
 Email : frank@domain.com
 Pass  : qwerty123
 
