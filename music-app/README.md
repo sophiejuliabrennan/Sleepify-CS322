@@ -1,4 +1,8 @@
-# Getting Started with Musiq App
+# Getting Started with MusiQ App
+
+### Link to MusiQ hosted on Google Could
+http://35.214.114.248:3000/
+
 
 ### `npm install`
 Gets all the necessary packages to run the app.
