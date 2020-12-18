@@ -30,12 +30,11 @@ const Landing = () => (
     <br></br>
     <br></br>
 
-    <h1>We are a free music streming website</h1>
+    <h1>We are a free music streaming website</h1>
     <h2>And the features that this website provide include:</h2>
     <h3>Any user can upload their music so you can listen to it online.</h3>
-    <h3>You may download songs you like or add them to your own play list.</h3>
-    <h3>Before listening to the songs, you have to create an accont with us.</h3>
-    <h3>You can use your Google account when signing up for faster access.</h3>
+    <h3>You may download songs you like</h3>
+    <h3>Before listening to the songs, you have to create an account with us.</h3>
     <h3>You can browse the music by songs, artists or genre.</h3>
     <h3>You can do all of that in seconds and its free of charge.</h3>
     
