@@ -11,7 +11,7 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import UploadPage from '../Upload';
 import Profile from '../Profile';
-import Type from '../Type';
+
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
  
