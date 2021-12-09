@@ -38,9 +38,7 @@ const NavigationAuth = () => (
                         <li>
                             <Link to = { ROUTES.PROFILE }>Profile</Link>
                         </li>
-                        <li>
-                            <Link to = { ROUTES.LIKES }>Likes</Link>
-                        </li>
+                        
                         <li>
                             <Link to = { ROUTES.PASSWORD_FORGET }>Forgot Password</Link>
                         </li>

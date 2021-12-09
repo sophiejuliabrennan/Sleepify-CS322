@@ -10,4 +10,3 @@ export const ADMIN = "/admin";
 export const PASSWORD_FORGET = "/pass-f";
 export const PASSWORD_CHANGE = "/pass-c";
 export const PROFILE = "/profile";
-export const LIKES = "/likes";

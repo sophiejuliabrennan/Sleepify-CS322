@@ -8,7 +8,7 @@ const SignIn = () => (
   <div class = "sign">
   <div>
 
-    <h1 id = "hed">MusiQ</h1>
+    <h1 id = "hed">Sleepify</h1>
     <SignInForm />
     <SignUpLink />
   </div></div>
