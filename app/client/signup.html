@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/card.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        /*background-color: grey;*/
+        background-image: url("images/224700.jpg");
+
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+
+
+    <div class="sign">
+ <img src="images/wave.gif" alt="wave"></img>
+ <div class="centered">
+   <h1>Sleepify</h1>
+   <form id="signup_form" action="/signUp" method="POST"> 
+   <input type="text" placeholder="User Name" id="userName" name="userName" required><br>
+    <input type="text" placeholder="Email Address" id="email" name="email" required><br>
+    <input type="password" placeholder="Enter Password" id="password" name="password" required><br>
+    <input type="password" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword" required>
+        <br>
+    <button id="signup_submit_btn" type="submit">Sign Up</button>
+</form>
+ </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./javascript/signup.js"></script>
+  </body>
+</html>
