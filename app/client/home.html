@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/card.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body{
+    /*background-color: grey;*/
+    background-image: url("images/224700.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home {
+  text-align: center;
+  color: white;
+  padding-left:16px;
+  margin-top: 5%;
+}
+
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="/home" class="active">Home</a>
+    <a href="/account">Account</a>
+    <a id="signout" href="/">Sign Out</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="home">
+    <div>
+      <h1>Discover Sleepify♪♫♬</h1>
+      <h2>Types Of Playlists: </h2>
+      <br></br>
+
+      <div container="columns">
+        <div class="container">
+          <a href="/PlaylistSleep">
+            <br>
+            <br>
+           <center> <img src="images/img_sleep.jpg" alt="sleep"></img></center>
+           <br>
+           <br>
+            <button class="btn">Sleep</button>
+          </a>
+        </div>
+
+        <div class="container">
+          <a href="/PlaylistStudy">
+            <br>
+            <br>
+           <center> <img src="images/img_study.jpg" alt="sleep"></img></center>
+           <br>
+           <br>
+            <button class="btn">Study</button>
+          </a>
+        </div>
+
+        <div class="container">
+          <a href="/PlaylistWork">
+            <br>
+            <br>
+           <center> <img src="images/img_work.jpg" alt="sleep"></img></center>
+           <br>
+           <br>
+            <button class="btn">Work</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="./javascript/script.js"></script>
+
+</body>
+</html>
