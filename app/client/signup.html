@@ -36,5 +36,15 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="./javascript/signup.js"></script>
+<script>
+$(document).ready(function () {
+   var userName = $("#userName").val();
+   var email = $("#email").val();
+   var password = $("#password").val();
+   localStorage.setItem("userName", userName);
+   localStorage.setItem("email", email);
+   localStorage.setItem("password", password);
+})
+</script>
   </body>
 </html>
