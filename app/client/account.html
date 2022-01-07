@@ -1,1 +1,66 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/card.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        /*background-color: grey;*/
+        background-image: url("images/224700.jpg");
+        color: white;
+      }
+      #title {
+        color: white;
+        text-align: center;
+      }
+      #account {
+        margin-left: 50px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="/home" class="active">Home</a>
+      <a href="/account">Account</a>
+      <a id="signout" href="/">Sign Out</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <br /><br /><br /><br /><br /><br />
+    <h1 id="title">Welcome to Sleepify <u>user1</u></h1>
+    <br /><br /><br /><br /><br />
+    <div id="account">
+      <h1>Account Information:</h1>
+
+      <h2>UserName: <u>user1</u></h2>
+      <h2>Email: <u>user1@gmail.com</u></h2>
+      <br /><br /><br /><br /><br />
+      <h1>Password:</h1>
+      <h2>Change Password: <button id="change">Change Password</button></h2>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="./javascript/script.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#change").click(function () {
+          let text;
+          let pass = prompt("Please enter your new password");
+          if (pass == null || pass == "") {
+            text = "User cancelled the prompt.";
+          } else {
+            alert("New Password: " + pass);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
